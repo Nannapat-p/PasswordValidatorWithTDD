@@ -23,7 +23,7 @@ public class PasswordValidatorTest{
          // Test Case 3: รหัสผ่านที่มีทั้งตัวเลขและตัวอักษร ควรจะ Weak
         PasswordStrength result3 = PasswordValidator.validate("12345678comsic");
         if (result3 == PasswordStrength.WEAK) {
-            System.out.println("Test Case 3 Passed:have text  Password is Weak");
+            System.out.println("Test Case 3 Passed: have text  Password is Weak");
         } else {
             System.out.println("Test Case 3 FAILED: Expected Weak but got " + result3);
         }
@@ -42,12 +42,31 @@ public class PasswordValidatorTest{
         } else {
             System.out.println("Test Case 5 FAILED: Expected Strong but got " + result5);
         }
+
+        
+        // Test Case 6: รหัสผ่านที่มีอักษรพิเศษอย่างเดียว ควรจะเป็น 
+        PasswordStrength result6 = PasswordValidator.validate("@@@@@@@@");
+        if (result6 == PasswordStrength.INVALID) {
+            System.out.println("Test Case 6 Passed: have special character only Password is INVALID");
+        } else {
+            System.out.println("Test Case 6 FAILED: Expected INVALID but got " + result6);
+        }
+        // Test Case 7: รหัสผ่านที่มีอักษรพิเศษอย่างเดียว ควรจะเป็น 
+        PasswordStrength result7 = PasswordValidator.validate("11111111");
+        if (result7 == PasswordStrength.INVALID) {
+            System.out.println("Test Case 7 Passed: have number only Password is INVALID");
+        } else {
+            System.out.println("Test Case 7 FAILED: Expected INVALID but got " + result7);
+        }
+         // Test Case 8: รหัสผ่านที่มีตัวอักษรพิมพ์ใหญ่อย่างเดียว ควรจะเป็น 
+         PasswordStrength result8 = PasswordValidator.validate("CCCCCCCCCC");
+         if (result8 == PasswordStrength.INVALID) {
+             System.out.println("Test Case 8 Passed: have big Text only Password is INVALID");
+         } else {
+             System.out.println("Test Case 8 FAILED: Expected INVALID but got " + result8);
+         }
         
        
-
-
-
-        // --- เขียน Test Case อื่นๆ ต่อ ---
 
         System.out.println("--------------------------------");
     }

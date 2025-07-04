@@ -49,7 +49,9 @@ public class PasswordValidator {
          }else if (count == 2) {
 
             return PasswordStrength.MEDIUM;
+            
          }else if (count == 3) {
+
             return PasswordStrength.STRONG;
          }
              
