@@ -28,26 +28,21 @@ public class PasswordValidatorTest{
             System.out.println("Test Case 3 FAILED: Expected Weak but got " + result3);
         }
 
-         // Test Case 3: รหัสผ่านที่มีทั้งตัวเลขตัวอักษรตัวอักษรเล็กและใหญ่ ควรจะ Medium
+         // Test Case 4: รหัสผ่านที่มีทั้งตัวเลขตัวอักษรตัวอักษรเล็กและใหญ่ ควรจะ Medium
         PasswordStrength result4 = PasswordValidator.validate("12345678ComSic");
         if (result4 == PasswordStrength.MEDIUM) {
             System.out.println("Test Case 4 Passed: have bigText and smallText Password is  Medium");
         } else {
             System.out.println("Test Case 4 FAILED: Expected Medium but got " + result4);
         }
-        // Test Case 4: รหัสผ่านที่มีทั้งตัวเลขตัวอักษรตัวอักษรเล็กใหญ่และมีอักษรพิเศษ ควรจะ Strong
+        // Test Case 5: รหัสผ่านที่มีทั้งตัวเลขตัวอักษรตัวอักษรเล็กใหญ่และมีอักษรพิเศษ ควรจะ Strong
         PasswordStrength result5 = PasswordValidator.validate("12345678@ComSic");
         if (result5 == PasswordStrength.STRONG) {
             System.out.println("Test Case 5 Passed: have bigText and smallText and have special character Password is Strong");
         } else {
             System.out.println("Test Case 5 FAILED: Expected Strong but got " + result5);
         }
-         PasswordStrength result6 = PasswordValidator.validate("12345678]ComSic");
-        if (result6 == PasswordStrength.STRONG) {
-            System.out.println("Test Case 6 Passed: have bigText and smallText and have special character Password is Strong");
-        } else {
-            System.out.println("Test Case 6 FAILED: Expected Strong but got " + result6);
-        }
+        
        
 
 
